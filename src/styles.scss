@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --rosa: #ff28b8;
+  --verde: #37f889;
+  --celeste: #00d5f4;
+  --amarillo: #ffda49;
+  --negro: #080808;
+  --blanco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #080808;
+}
+
+button, a {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

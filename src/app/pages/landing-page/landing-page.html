@@ -1,0 +1,205 @@
+<div class="landing-wrapper">
+  <main class="landing-page">
+
+    <a routerLink="/" fragment="servicios" class="volver">
+      <span>←</span> VOLVER
+    </a>
+
+    <h1 class="titulo">
+      LANDING PAGE PERSONALIZADA
+    </h1>
+
+    <!-- DESCRIPCIÓN DE LA LANDING -->
+
+    <div class="landing-descripcion">
+      <span class="descripcion-destello" aria-hidden="true">✦</span>
+
+      <p>
+        Una página <strong>moderna y atractiva</strong>
+        para presentar tu negocio, destacar sus servicios
+        y conectar con tus clientes.
+      </p>
+    </div>
+
+    <div class="landing-contenido">
+
+      <!-- COLUMNA IZQUIERDA -->
+
+      <section class="caracteristicas">
+
+        <h2>QUÉ INCLUYE</h2>
+
+        <ul>
+          <li>Diseño de 1 sola página</li>
+          <li>Configuración de dominio</li>
+          <li>Paleta de colores a elección</li>
+          <li>Alojamiento Web</li>
+          <li>Adaptación a todos los dispositivos</li>
+          <li>Hasta 6 secciones</li>
+          <li>Hasta 2 rondas de modificaciones</li>
+        </ul>
+
+        <p class="entrega">
+          🕓 Entrega estimada: 5 a 7 días hábiles
+        </p>
+
+      </section>
+
+      <!-- COLUMNA DERECHA -->
+
+      <section class="presentacion">
+
+        <div class="imagen-landing">
+          <img
+            src="/images/landing-preview.png"
+            alt="Ejemplo de landing page en computadora y celular"
+          >
+        </div>
+
+        <div class="precio-contenedor">
+
+          <span class="precio-etiqueta">
+            PRECIO
+          </span>
+
+          <p class="precio">$80.000</p>
+
+          <a
+            class="boton-landing"
+            href="https://wa.me/?text=Hola%2C%20quiero%20consultar%20por%20la%20Landing%20Page%20Personalizada%20de%20VUXEL."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Quiero mi Landing
+            <span>→</span>
+          </a>
+
+          <p class="texto-alternativa">
+            ¿Necesitás algo diferente?
+          </p>
+
+          <a
+            routerLink="/web-personalizada"
+            class="link-personalizada"
+          >
+            Ver Web Personalizada →
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  
+<!-- SEGUNDA SECCIÓN: EJEMPLOS -->
+
+<section class="ejemplos-secciones">
+
+  <div class="ejemplos-encabezado">
+    <span>CONOCÉ CÓMO SE ORGANIZA TU LANDING</span>
+
+    <h2>Ejemplo de secciones</h2>
+
+    <p>
+      Tu sitio web puede incluir hasta 6 secciones,
+      diseñadas para presentar tu negocio de manera clara y profesional.
+    </p>
+  </div>
+
+  <div class="ejemplos-grid">
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-inicio.png"
+        alt="Ejemplo de Inicio"
+        (click)="abrirImagen('/images/seccion-inicio.png')"
+      >
+      <h3>Inicio</h3>
+    </article>
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-que-hacemos.png"
+        alt="Ejemplo de Qué hacemos"
+        (click)="abrirImagen('/images/seccion-que-hacemos.png')"
+      >
+      <h3>Qué hacemos</h3>
+    </article>
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-servicios.png"
+        alt="Ejemplo de Servicios"
+        (click)="abrirImagen('/images/seccion-servicios.png')"
+      >
+      <h3>Servicios</h3>
+    </article>
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-trabajos.png"
+        alt="Ejemplo de Trabajos"
+        (click)="abrirImagen('/images/seccion-trabajos.png')"
+      >
+      <h3>Trabajos</h3>
+    </article>
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-opiniones.png"
+        alt="Ejemplo de Opiniones"
+        (click)="abrirImagen('/images/seccion-opiniones.png')"
+      >
+      <h3>Opiniones</h3>
+    </article>
+
+    <article class="ejemplo-card">
+      <img
+        src="/images/seccion-contacto.png"
+        alt="Ejemplo de Contacto"
+        (click)="abrirImagen('/images/seccion-contacto.png')"
+      >
+      <h3>Contacto</h3>
+    </article>
+
+  </div>
+
+  <p class="ejemplos-aclaracion">
+    * Las secciones son orientativas y pueden adaptarse a cada negocio.
+  </p>
+
+</section>
+
+<!-- CIERRE DEL CONTENEDOR PRINCIPAL -->
+</div>
+
+<!-- VISOR DE IMÁGENES -->
+
+@if (imagenAmpliada) {
+  <div
+    class="visor-imagen"
+    (click)="cerrarImagen()"
+  >
+
+    <button
+      type="button"
+      class="cerrar-visor"
+      aria-label="Cerrar imagen"
+      (click)="cerrarImagen()"
+    >
+      ×
+    </button>
+
+    <img
+      [src]="imagenAmpliada"
+      alt="Vista ampliada de la sección"
+      (click)="$event.stopPropagation()"
+    >
+
+  </div>
+}
+

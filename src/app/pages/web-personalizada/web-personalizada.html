@@ -1,0 +1,113 @@
+
+<main class="web-personalizada">
+
+  <!-- BOTÓN VOLVER -->
+  <a routerLink="/" fragment="servicios" class="volver">
+    ← VOLVER
+  </a>
+
+  <!-- TÍTULO -->
+  <header class="encabezado">
+    <h1>WEB PERSONALIZADA</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="contenido">
+
+    <!-- COLUMNA IZQUIERDA: QUÉ INCLUYE -->
+    <section class="caracteristicas">
+
+      <h2>QUÉ INCLUYE</h2>
+
+      <ul>
+        <li>Diseño personalizado</li>
+        <li>Múltiples secciones</li>
+        <li>Animaciones e interacciones visuales</li>
+        <li>Adaptación a todos los dispositivos</li>
+        <li>Configuración de dominio</li>
+        <li>2 rondas de modificaciones</li>
+        <li>Alojamiento web incluido</li>
+      </ul>
+
+      <p class="entrega">
+        🕓 Entrega estimada: 7 a 10 días hábiles
+      </p>
+
+    </section>
+
+    <!-- COLUMNA DERECHA: GALAXIA ANIMADA -->
+    <section
+      class="escena"
+      #escena
+      [class.animando]="animar"
+    >
+
+      <!-- FONDO GALÁCTICO -->
+      <div class="galaxia" aria-hidden="true">
+        <div class="galaxia-cuadricula"></div>
+        <div class="galaxia-particulas"></div>
+      </div>
+
+      <!-- DINOSAURIO NARANJA -->
+      <div class="dinosaurio">
+        <img
+          src="/images/dinosaurio-naranja.png"
+          alt="Dinosaurio naranja de VUXEL"
+        />
+      </div>
+
+      <!-- EXPLOSIÓN MÁGICA -->
+      <div
+        class="explosion-magica"
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+
+      <!-- DESCRIPCIÓN: APARECE DESPUÉS DEL DINOSAURIO -->
+      <div class="descripcion">
+
+        <span class="destello destello-uno">✦</span>
+        <span class="destello destello-dos">✧</span>
+        <span class="destello destello-tres">✦</span>
+
+        <p>
+          Un sitio web más completo con
+          <strong>varias páginas</strong>,
+          diseñado según las necesidades
+          de <strong>tu negocio.</strong>
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+  <!-- FIN DEL CONTENIDO PRINCIPAL -->
+
+  <!-- BARRA INFERIOR: PRESUPUESTO -->
+  <div class="presupuesto">
+
+    <div class="presupuesto-texto">
+
+      <span class="icono-avion">➤</span>
+
+      <p>
+        Contanos tu idea y te ayudamos a crear
+        un sitio web único.
+      </p>
+
+    </div>
+
+    <a
+      href="https://wa.me/1162329128?text=Hola%2C%20quiero%20consultar%20por%20la%20Web%20Personalizada%20de%20VUXEL."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="boton-presupuesto"
+    >
+      Solicitar presupuesto →
+    </a>
+
+  </div>
+
+</main>

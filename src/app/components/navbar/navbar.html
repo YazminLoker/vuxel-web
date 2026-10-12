@@ -1,0 +1,40 @@
+
+<header class="navbar">
+
+  <!-- LOGO VUXEL -->
+  <a routerLink="/" class="navbar-logo">
+    <img
+      src="/images/logo-vuxel.png"
+      alt="VUXEL"
+    >
+  </a>
+
+  <!-- MENÚ -->
+  <nav [class.menu-abierto]="menuAbierto">
+    <a routerLink="/" fragment="inicio"
+       (click)="cerrarMenu()">Inicio</a>
+
+    <a routerLink="/" fragment="nosotros"
+       (click)="cerrarMenu()">Quiénes somos</a>
+
+    <a routerLink="/" fragment="servicios"
+       (click)="cerrarMenu()">Servicios</a>
+
+    <a routerLink="/blog"
+       (click)="cerrarMenu()">Blog</a>
+
+    <a routerLink="/" fragment="contacto"
+       (click)="cerrarMenu()">Contacto</a>
+  </nav>
+
+  <!-- MENÚ CELULAR -->
+  <button
+    class="menu-toggle"
+    type="button"
+    [attr.aria-expanded]="menuAbierto"
+    aria-label="Abrir o cerrar menú"
+    (click)="menuAbierto = !menuAbierto">
+    ☰
+  </button>
+
+</header>

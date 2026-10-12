@@ -1,0 +1,689 @@
+
+:host {
+  display: block;
+}
+
+.web-personalizada {
+  height: 100dvh;
+  min-height: 600px;
+  box-sizing: border-box;
+  border: 9px solid #37f889;
+  background: #fff;
+  padding: 16px 30px 18px;
+  font-family: 'Montserrat', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* BOTÓN VOLVER */
+
+.volver {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  border-radius: 25px;
+  background: #fff8e9;
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* TÍTULO */
+
+.encabezado {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.encabezado h1 {
+  margin: 0 0 4px;
+  font-size: clamp(30px, 4.4vw, 62px);
+  font-weight: 900;
+  line-height: 1.15;
+
+  background: linear-gradient(
+    90deg,
+    #009dba,
+    #25c7a0,
+    #78d65e
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DOS COLUMNAS */
+
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 35%) minmax(0, 65%);
+  flex: 1;
+  min-height: 0;
+  gap: 12px;
+}
+
+/* CARACTERÍSTICAS */
+
+.caracteristicas {
+  padding: 8px 12px 0 0;
+  min-width: 0;
+}
+
+.caracteristicas h2 {
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 9px 25px;
+  border-radius: 25px;
+  background: #8df8bc;
+  color: #111;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.caracteristicas ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.caracteristicas li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.caracteristicas li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #23d98a;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.entrega {
+  margin: 16px 0 0;
+  font-size: 14px;
+}
+
+/* GALAXIA NEGRA */
+
+.escena {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 22px;
+  background: #030307;
+}
+
+.galaxia {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  perspective: 350px;
+  pointer-events: none;
+}
+
+.galaxia-cuadricula {
+  position: absolute;
+  inset: -100%;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, .23) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .23) 1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+  transform-origin: center;
+  animation: viajeGalaxia 8s linear infinite;
+}
+
+@keyframes viajeGalaxia {
+  from {
+    transform: rotateX(32deg) scale(.7);
+    opacity: .35;
+  }
+
+  to {
+    transform: rotateX(32deg) scale(1.4);
+    opacity: .8;
+  }
+}
+
+.galaxia-particulas {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, #ff28b8 1.5px, transparent 3px),
+    radial-gradient(circle, #37f889 1.5px, transparent 3px),
+    radial-gradient(circle, #00d5f4 1.5px, transparent 3px);
+
+  background-size:
+    170px 130px,
+    230px 180px,
+    290px 210px;
+
+  opacity: .8;
+  animation: flotarParticulas 12s linear infinite;
+}
+
+@keyframes flotarParticulas {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+/* DINOSAURIO */
+
+.dinosaurio {
+  position: absolute;
+  top: -220px;
+  left: 75%;
+  width: clamp(170px, 19vw, 260px);
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.dinosaurio img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 15px 20px #0009);
+}
+
+/* EL DINOSAURIO ENTRA Y SE DESPLAZA */
+
+.escena.animando .dinosaurio {
+  animation: llegadaDinosaurio 3.2s ease-in-out .2s both;
+}
+
+@keyframes llegadaDinosaurio {
+  0% {
+    top: -220px;
+    left: 80%;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-25deg) scale(.8);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    top: 12%;
+    left: 65%;
+    opacity: 1;
+    transform: translateX(-50%) rotate(18deg) scale(1.1);
+  }
+
+  70% {
+    top: 32%;
+    left: 45%;
+    opacity: 1;
+    transform: translateX(-50%) rotate(-12deg) scale(1.15);
+  }
+
+  88% {
+    top: 40%;
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%) rotate(0) scale(1);
+  }
+
+  100% {
+    top: 40%;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) scale(.2);
+  }
+}
+
+/* EXPLOSIÓN DE LUZ */
+
+.explosion-magica {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  z-index: 5;
+  color: #37f889;
+  font-size: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+
+  text-shadow:
+    0 0 35px #37f889,
+    0 0 70px #00d5f4;
+}
+
+.escena.animando .explosion-magica {
+  animation: explosionMagica .8s ease-out 3.1s both;
+}
+
+@keyframes explosionMagica {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3) rotate(180deg);
+  }
+}
+
+/* DESCRIPCIÓN OCULTA AL PRINCIPIO */
+
+.descripcion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(84%, 540px);
+  box-sizing: border-box;
+  padding: 25px 28px;
+  text-align: center;
+  border-radius: 24px;
+  z-index: 2;
+
+  background: rgba(15, 16, 22, .96);
+  border: 1px solid #37f889;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(.2) rotate(-8deg);
+  box-shadow: none;
+}
+
+.descripcion p {
+  margin: 0;
+  font-size: clamp(17px, 1.8vw, 24px);
+  line-height: 1.5;
+  color: white;
+}
+
+.descripcion strong {
+  color: #37f889;
+}
+
+/* LA DESCRIPCIÓN APARECE DESPUÉS DE LA EXPLOSIÓN */
+
+.escena.animando .descripcion {
+  animation: revelarDescripcion 1s cubic-bezier(.2, 1.3, .4, 1)
+    3.7s both;
+}
+
+@keyframes revelarDescripcion {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(.2) rotate(-8deg);
+    box-shadow: none;
+  }
+
+  60% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1.07) rotate(2deg);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+    box-shadow:
+      0 0 25px #37f88955,
+      0 0 60px #00d5f430;
+  }
+}
+
+/* DESTELLOS */
+
+.destello {
+  position: absolute;
+  font-size: 32px;
+  opacity: 0;
+  color: #ff28b8;
+}
+
+.destello-uno {
+  top: -25px;
+  left: 10%;
+}
+
+.destello-dos {
+  top: 0;
+  right: -15px;
+  color: #00d5f4;
+}
+
+.destello-tres {
+  bottom: -25px;
+  left: 45%;
+  color: #37f889;
+}
+
+.escena.animando .destello {
+  animation: brillar 1.1s ease-in-out 3.8s forwards;
+}
+
+@keyframes brillar {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4) rotate(90deg);
+  }
+
+  100% {
+    opacity: .9;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/* BARRA DE PRESUPUESTO */
+
+.presupuesto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  margin-top: 6px;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #eafcf7,
+    #e1fff3,
+    #edfcf8
+  );
+}
+
+.presupuesto-texto {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.presupuesto-texto p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.icono-avion {
+  flex-shrink: 0;
+  font-size: 30px;
+  color: #06b979;
+}
+
+.boton-presupuesto {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 13px 25px;
+  border-radius: 35px;
+
+  background: #09b978;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  white-space: nowrap;
+
+  transition: transform .3s, background .3s;
+}
+
+.boton-presupuesto:hover {
+  transform: translateY(-3px);
+  background: #079b65;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 950px) {
+  .web-personalizada {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    padding: 18px 15px;
+  }
+
+  .encabezado h1 {
+    font-size: clamp(28px, 7vw, 45px);
+  }
+
+  .contenido {
+    grid-template-columns: 1fr;
+    flex: none;
+  }
+
+  .escena {
+    min-height: 360px;
+  }
+
+  .dinosaurio {
+    width: 145px;
+  }
+
+  .presupuesto {
+    flex-direction: column;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .presupuesto-texto {
+    justify-content: center;
+  }
+
+  .descripcion {
+    width: 88%;
+    padding: 18px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  .galaxia-cuadricula,
+  .galaxia-particulas,
+  .escena.animando .dinosaurio,
+  .escena.animando .descripcion,
+  .escena.animando .destello,
+  .escena.animando .explosion-magica {
+    animation: none;
+  }
+
+  .dinosaurio {
+    display: none;
+  }
+
+  .descripcion {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+/* SOLO CELULAR - WEB PERSONALIZADA */
+
+@media (max-width: 768px) {
+
+  .web-personalizada {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 14px 12px 20px;
+    border-width: 5px;
+  }
+
+  .encabezado h1 {
+    font-size: clamp(17px, 5vw, 23px);
+    white-space: nowrap;
+    margin: 12px 0 16px;
+  }
+
+  /* CAMBIAR EL ORDEN SOLO EN CELULAR */
+
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 0;
+    flex: none;
+  }
+
+  /* 1. ANIMACIÓN ARRIBA */
+
+  .escena {
+    order: 1;
+    width: 100%;
+    height: 260px;
+    min-height: 260px;
+    border-radius: 16px;
+  }
+
+  .dinosaurio {
+    width: 150px;
+  }
+
+  .descripcion {
+    width: 88%;
+    padding: 15px;
+  }
+
+  .descripcion p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* 2. CARACTERÍSTICAS EN DOS COLUMNAS */
+
+  .caracteristicas {
+    order: 2;
+    width: 100%;
+    padding: 0;
+  }
+
+  .caracteristicas h2 {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-bottom: 14px;
+    display: table;
+    margin: 0 auto 18px;
+    text-align: center;
+  }
+
+  .caracteristicas ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px;
+  }
+
+  .caracteristicas li {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .caracteristicas li::before {
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .entrega {
+    margin-top: 16px;
+    font-size: 11px;
+  }
+
+  /* 3. PRESUPUESTO ABAJO */
+
+  .presupuesto {
+    order: 3;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px 12px;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .presupuesto-texto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .presupuesto-texto p {
+    font-size: clamp(10px, 2vw, 10px);
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .icono-avion {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .boton-presupuesto {
+    padding: 12px 20px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}

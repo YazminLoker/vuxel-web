@@ -1,0 +1,286 @@
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+      
+        
+    <div class="hero-video">
+        <video
+            #videoVuxel
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            (loadeddata)="reproducirVideo(videoVuxel)"
+        >
+            <source
+            src="/videos/vuxel-presentacion.mp4"
+            type="video/mp4"
+            >
+            Tu navegador no admite videos HTML5.
+        </video>
+    </div>
+
+
+
+    <div class="hero-logo">
+      <img
+        src="/images/isotipo-vx.png"
+        alt="Isotipo VX de VUXEL"
+        class="isotipo"
+      >
+
+      <p>Diseño y Desarrollo de Sitios Web</p>
+    </div>
+
+  </section>
+
+ 
+<!-- CONCEPTO VUXEL -->
+
+<section
+  class="concepto"
+  id="nosotros"
+  #seccionConcepto
+  [class.animar-palabras]="animarPalabras"
+>
+  <div class="galaxia" aria-hidden="true">
+    <div class="galaxia-cuadricula"></div>
+    <div class="galaxia-particulas"></div>
+  </div>
+
+  <div class="concepto-contenido">
+    <h2 class="pixel">PIXEL</h2>
+
+    <h2 class="interfaz">
+      INTERFAZ VISUAL
+    </h2>
+
+    <h2 class="experiencia">
+      EXPERIENCIA DE USUARIO
+    </h2>
+  </div>
+</section>
+
+
+
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+
+    <h2 class="servicios-titulo">
+        Tenemos la solución
+        <span class="titulo-degradado">para tu negocio</span>
+    </h2>
+
+    <div class="servicios-grid">
+
+      <!-- LANDING PAGE -->
+      <article class="servicio-card landing">
+        <h3>LANDING PAGE</h3>
+
+        <p>
+          Una página clara y profesional
+          para mostrar tu negocio y
+          convertir visitas en consultas.
+        </p>
+
+        <a routerLink="/landing-page">
+          QUIERO MI LANDING
+        </a>
+      </article>
+
+      <!-- WEB PERSONALIZADA -->
+      <article class="servicio-card personalizada">
+        <h3>WEB PERSONALIZADA</h3>
+
+        <p>
+          Una web creada desde cero
+          para tu negocio.
+        </p>
+
+        <a routerLink="/web-personalizada">
+          CONTANOS TU IDEA
+        </a>
+      </article>
+
+      <!-- MANTENIMIENTO -->
+      <article class="servicio-card mantenimiento">
+        <h3>MANTENIMIENTO WEB</h3>
+
+        <p>
+          Tu web siempre actualizada.
+        </p>
+
+        <a routerLink="/mantenimiento-web">
+          VER MANTENIMIENTO
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  
+<!-- PREGUNTAS FRECUENTES -->
+
+<section class="faq" id="preguntas-frecuentes">
+
+  <div class="faq-encabezado">
+    <span class="faq-etiqueta">RESOLVEMOS TUS DUDAS</span>
+
+    <h2>
+      Preguntas <span>frecuentes</span>
+    </h2>
+
+    <p>
+      Todo lo que necesitás saber antes de crear
+      tu sitio web con VUXEL.
+    </p>
+  </div>
+
+  <div class="faq-lista">
+
+    <details class="faq-item">
+      <summary>¿El precio incluye dominio y hosting?</summary>
+      <p>
+        El alojamiento web está incluido en nuestras propuestas.
+        El dominio se cotiza por separado según la extensión
+        que elijas (.com, .com.ar, etc.).
+        Te ayudamos con la configuración.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué es una landing page personalizada?</summary>
+      <p>
+        Una Landing Page Personalizada es una página web de una sola página, 
+        diseñada especialmente para tu negocio. En ella podés mostrar quién sos,
+        qué ofrecés, tus trabajos y tus datos de contacto.Es ideal si buscás tener 
+        presencia en internet de forma profesional, sencilla y atractiva.
+      </p>
+    </details>
+
+    <!-- PREGUNTAS ADICIONALES -->
+    @if (mostrarTodasPreguntas) {
+
+      <div class="faq-extra">
+
+        <details class="faq-item">
+          <summary>¿Qué es una web personalizada?</summary>
+          <p>
+          Una Web Personalizada es un sitio diseñado y desarrollado a medida, según las necesidades de tu negocio.
+          A diferencia de una Landing Page, puede incluir varias páginas y secciones independientes, permitiéndote 
+          organizar mejor tus servicios, productos e información.
+          Es ideal para negocios que necesitan un sitio más completo y con mayores posibilidades de crecimiento.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cuándo necesito contratar Mantenimiento Web?</summary>
+          <p>
+            Cuando ya tenés una página web y necesitás mantenerla actualizada.
+            El mantenimiento te permite modificar textos, imágenes, precios, servicios
+            o información de contacto, además de realizar ajustes y mejoras para que tu sitio siga funcionando correctamente.
+            Es ideal si querés mantener tu web al día sin preocuparte por los cambios técnicos.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo elegir el diseño?</summary>
+          <p>
+            Sí. Te presentamos un diseño inicial y
+            podemos hacer ajustes según tus preferencias.
+            También podemos orientarte para lograr
+            un diseño atractivo y funcional.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cuánto tiempo tarda la entrega?</summary>
+          <p>
+            El plazo depende del tipo de sitio web.
+            Una Landing Page Personalizada tiene una entrega
+            estimada de 5 a 7 días hábiles, una vez recibido
+            todo el material necesario.
+            Los proyectos más grandes se presupuestan
+            con sus propios plazos.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo pedir modificaciones?</summary>
+          <p>
+            ¡Sí! Podés solicitar modificaciones durante
+            el proceso de desarrollo, de acuerdo con
+            las revisiones incluidas en tu propuesta.
+            Los cambios adicionales se presupuestan por separado.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Qué tipo de páginas desarrollan?</summary>
+          <p>
+            Diseñamos y desarrollamos Landing Pages y sitios web
+            personalizados para negocios, profesionales
+            y emprendimientos que necesitan presencia online.
+            Nos enfocamos en sitios modernos, visuales
+            y que generen una buena experiencia de usuario.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Hacen tiendas online?</summary>
+          <p>
+            No, Actualmente nos especializamos solo en sitios web
+            informativos y de presentación de negocios.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿El contenido lo proporciono yo?</summary>
+          <p>
+            Sí. Para comenzar necesitamos la información
+            de tu negocio, imágenes, servicios, datos de contacto
+            y logo, si tenés uno.
+            También podemos orientarte para organizar
+            el contenido de tu página.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo es el proceso de trabajo?</summary>
+          <p>
+            Primero nos contás tu idea y completás un formulario
+            con la información de tu negocio.
+            Luego definimos el diseño, comenzamos el desarrollo,
+            realizamos las revisiones acordadas y finalmente
+            publicamos tu sitio web.
+          </p>
+        </details>
+      </div>
+    }
+
+     <!-- BOTÓN AL FINAL -->
+      <button
+        type="button"
+        class="faq-boton"
+        (click)="alternarPreguntas()"
+        [attr.aria-expanded]="mostrarTodasPreguntas"
+      >
+        {{ mostrarTodasPreguntas
+          ? 'Ver menos preguntas'
+          : 'Ver todas las preguntas' }}
+
+        <span>
+          {{ mostrarTodasPreguntas ? '↑' : '↓' }}
+        </span>
+      </button>
+
+    </div>
+
+</section>
+
+
+</main>

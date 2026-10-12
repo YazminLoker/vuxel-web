@@ -1,0 +1,339 @@
+
+.footer {
+  padding: 45px 6%;
+  min-height: 230px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.3fr;
+  align-items: center;
+  gap: 35px;
+  background: #fcfafa;
+}
+
+.footer-marca {
+  text-align: center;
+
+  .footer-logo {
+    width: 190px;
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.4;
+    margin: 5px 0;
+  }
+}
+
+
+.footer-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    text-decoration: none;
+    font-size: 34px;
+
+    border: none;
+    padding: 0;
+    background: transparent;
+
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      color: #ff28b8;
+    }
+  }
+
+  i {
+    display: block;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-redes {
+    gap: 22px;
+
+    a {
+      font-size: 29px;
+    }
+  }
+}
+
+
+.footer-contacto {
+  border-left: 3px solid #000;
+  padding-left: 30px;
+
+  h2 {
+    font-size: 22px;
+    margin: 0 0 12px;
+  }
+
+  p {
+    font-size: 17px;
+    margin: 0 0 15px;
+  }
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 11px 17px;
+  background: #000;
+  color: white;
+  border-radius: 13px;
+  font-size: 14px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #333;
+  }
+}
+
+
+/* FOOTER RESPONSIVE - CELULAR */
+
+@media (max-width: 850px) {
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1.2fr;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 12px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  /* LOGO Y DESCRIPCIÓN */
+  .footer-marca {
+    min-width: 0;
+    text-align: center;
+
+    .footer-logo {
+      width: 100%;
+      max-width: 115px;
+      height: auto;
+    }
+
+    p {
+      font-size: 10px;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+  }
+
+  /* REDES SOCIALES */
+  .footer-redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 7px;
+
+    a {
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+  }
+
+  /* CONTACTO */
+  .footer-contacto {
+    min-width: 0;
+    border-left: 2px solid #000;
+    border-top: none;
+    padding: 0 0 0 10px;
+    text-align: center;
+
+    h2 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 10px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* BOTÓN WHATSAPP */
+  .btn-whatsapp {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 9px 6px;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+    text-decoration: none;
+    border-radius: 9px;
+  }
+}
+
+
+
+/* FOOTER - SOLO CELULAR */
+
+@media (max-width: 768px) {
+
+  .footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "contacto contacto"
+      "marca redes";
+
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 18px;
+    text-align: center;
+
+    padding-top: 12px;
+    row-gap: 16px;
+  }
+
+  /* CONTACTO ARRIBA */
+
+  .footer-contacto {
+    grid-area: contacto;
+    border: none;
+    padding: 0;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    transform: translateY(-15px);
+  }
+
+  .footer-contacto h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .footer-contacto p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    padding: 11px 18px;
+    margin-top: 5px;
+
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+    border-radius: 10px;
+    text-decoration: none;
+
+    background: #000;
+    color: #fff;
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .btn-whatsapp:hover,
+  .btn-whatsapp:active,
+  .btn-whatsapp:focus-visible {
+    background: #ff28b8;
+    color: #fff;
+  }
+
+  .btn-whatsapp:active {
+    transform: scale(0.96);
+  }
+
+  /* LOGO ABAJO A LA IZQUIERDA */
+
+  .footer-marca {
+    grid-area: marca;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .footer-marca .footer-logo {
+    width: 110px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-marca p {
+    font-size: 10px;
+    line-height: 1.3;
+    margin: 4px 0 0;
+  }
+
+  /* REDES ABAJO A LA DERECHA */
+
+  .footer-redes {
+    grid-area: redes;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .footer-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+}
+
+/* CELULARES MÁS ANGOSTOS */
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 22px 12px;
+    column-gap: 8px;
+  }
+
+  .footer-marca .footer-logo {
+    width: 90px;
+  }
+
+  .footer-redes {
+    gap: 8px;
+  }
+
+  .footer-redes a {
+    font-size: 19px;
+  }
+}
+
+
+
+
+
+
+
